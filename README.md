@@ -2,23 +2,16 @@
 Netconfig is a collection of tools for my CLI to configure my network fast and simple. Some examples of its usage are on the picture below.
 
 ## Usage
-- `netconfig block eth_addr`
-- `netconfig unblock eth_addr`
-- `netconfig list`
-- `netconfig help`
-
-  block         Blocks internet traffic to specified MAC address.
-  unblock       Unblocks internet traffic to specified MAC address.
-  list          Displays current network entries in verbose mode.  All invalid
-                entries and entries on the loop-back interface will be shown.
-  help     	Displays the help section.
-  eth_addr      Specifies a physical address.
+- `netconfig block eth_addr` -> Blocks internet traffic to specified MAC address.
+- `netconfig unblock eth_addr` -> Unblocks internet traffic to specified MAC address.
+- `netconfig list` -> Displays current network entries in verbose mode.  All invalid entries and entries on the loop-back interface will be shown.
+- `netconfig help`-> 
 
 Example:
-  -> netconfig block 1C:15:1F:0C:40:27    .... Blocks internet traffic.
-  -> netconfig unblock 1C:15:1F:0C:40:27  .... Unblocks internet traffic.
-  -> netconfig list                       .... Displays network entries.
-  -> netconfig help                       .... Displays the help section.
+- `netconfig block 1C:15:1F:0C:40:27`
+- `netconfig unblock 1C:15:1F:0C:40:27`
+- `netconfig list`               
+- `netconfig help`                   
 
 <img src="netconfig.png">
 
