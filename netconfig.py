@@ -71,7 +71,7 @@ def unblockMAC():
         }	
         
         s.post(f"{GATEWAY}/goform/UbeeAdvancedMacFiltering", data = macFiltering_data)
-        print(f"{colored('Success:', 'green')} Unblocked internet traffic to {MAC}")
+        print(f"{colored('Success:', 'green')} Unblocked internet traffic to {MAC}\n")
         blocked = getBlocked()
         
         print("Current blocked entries:")
