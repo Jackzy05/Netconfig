@@ -15,10 +15,10 @@ Netconfig is a collection of tools for my CLI to configure my network fast and s
   eth_addr      Specifies a physical address.
 
 Example:
-  \> netconfig block 1C:15:1F:0C:40:27    .... Blocks internet traffic.
-  \> netconfig unblock 1C:15:1F:0C:40:27  .... Unblocks internet traffic.
-  \> netconfig list                       .... Displays network entries.
-  \> netconfig help                       .... Displays the help section.
+  -> netconfig block 1C:15:1F:0C:40:27    .... Blocks internet traffic.
+  -> netconfig unblock 1C:15:1F:0C:40:27  .... Unblocks internet traffic.
+  -> netconfig list                       .... Displays network entries.
+  -> netconfig help                       .... Displays the help section.
 
 <img src="netconfig.png">
 
