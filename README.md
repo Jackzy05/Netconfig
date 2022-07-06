@@ -5,7 +5,7 @@ Netconfig is a collection of tools for my CLI to configure my network fast and s
 - `netconfig block eth_addr` -> Blocks internet traffic to specified MAC address.
 - `netconfig unblock eth_addr` -> Unblocks internet traffic to specified MAC address.
 - `netconfig list` -> Displays current network entries in verbose mode.  All invalid entries and entries on the loop-back interface will be shown.
-- `netconfig help`-> 
+- `netconfig help` -> Displays the help section.
 
 Example:
 - `netconfig block 1C:15:1F:0C:40:27`
@@ -22,5 +22,5 @@ If you'd like to setup netconfig for your local machine you can follow these ste
 2. Install all needed modules -> `pip install bs4`, `pip install requests` and others if needed.
 3. Add the python extension (.PY) to the [PATHTEXT](https://www.msftnext.com/what-is-the-pathext-environment-variable-in-windows-10/) in the system environment variables
 4. Add the `config.json` file to [path](https://www.maketecheasier.com/what-is-the-windows-path/).
-5. Get your default gateway IP from the CLI using the `ipconfig` command. Paste that IP into your browser and explore API endpoints using [devtools](https://developer.chrome.com/docs/extensions/reference/devtools_network/).
+5. Get your default gateway IP from the CLI using the `ipconfig` command. Paste that IP into your browser and explore API endpoints using [devtools](https://developer.chrome.com/docs/extensions/reference/devtools_network/). You should have similar endpoints as mine if using an [Ubee](https://www.ubeeinteractive.com/) modem.
 6. Change the default gateway as well as the endpoints located in `netconfig.py`.
