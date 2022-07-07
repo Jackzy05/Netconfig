@@ -97,6 +97,8 @@ def listDevices():
 def displayHelp():
     with open("C:/Users/Jaka/Documents/Programming/Python/netconfig/help.txt", "r") as f:
         print(f.read())
+
+print("test")
     
 match ACTION:	
     case "1":	
