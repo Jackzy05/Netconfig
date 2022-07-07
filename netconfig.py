@@ -18,8 +18,11 @@ if len(argv) not in [2, 3]:
 elif argv[1] not in ["block", "unblock", "list", "/?"]:
     print(f"{colored('Error:', 'red')} Invalid parameters -> netconfig /?")
     exit()
-    
-GATEWAY = "http://192.168.0.1"
+
+ipv4_re = compile(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})")
+mac_re = compile(r'(?:[0-9a-fA-F]:?){12}')
+
+GATEWAY = f"http://{findall(ipv4_re, str(run(['ipconfig'], stdout = PIPE)))[2]}"
 if len(argv) == 3:
     match argv[1]:
         case "block":
@@ -30,7 +33,6 @@ if len(argv) == 3:
 else:
     ACTION = argv[1]
 
-mac_re = compile(r'(?:[0-9a-fA-F]:?){12}')
 def getBlocked():	
     blocked = BeautifulSoup(get(f"{GATEWAY}/UbeeAdvancedMacFiltering.asp").text, "html.parser").find("option")
     return findall(mac_re, str(blocked))
@@ -81,7 +83,7 @@ def unblockMAC():
         print(f"{colored('Error:', 'red')} {MAC} is already unblocked")
 
 def listDevices():
-    ipv4_re = compile(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})")
+    
     
     site = s.get(f"{GATEWAY}/UbeeAdvConnectedDevicesList.asp").text
     soup = BeautifulSoup(site, "html.parser")
