@@ -83,8 +83,6 @@ def unblockMAC():
         print(f"{colored('Error:', 'red')} {MAC} is already unblocked")
 
 def listDevices():
-    
-    
     site = s.get(f"{GATEWAY}/UbeeAdvConnectedDevicesList.asp").text
     soup = BeautifulSoup(site, "html.parser")
     html_code = soup.find_all("table", {"style": "font-family: Helvetica;font-size:14"})
