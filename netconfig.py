@@ -5,6 +5,7 @@ from re import compile, findall
 from termcolor import colored
 from os import system
 from json import loads
+from subprocess import run, PIPE
 
 system("color")
 
@@ -18,7 +19,7 @@ elif argv[1] not in ["block", "unblock", "list", "/?"]:
     print(f"{colored('Error:', 'red')} Invalid parameters -> netconfig /?")
     exit()
     
-GATEWAY= "http://192.168.0.1"
+GATEWAY = "http://192.168.0.1"
 if len(argv) == 3:
     match argv[1]:
         case "block":
@@ -88,9 +89,10 @@ def listDevices():
     mac_addresses = findall(mac_re, str(html_code))
     ipv4_addresses = findall(ipv4_re, str(html_code))
 
-    print(f"Interface: 192.168.0.1\n")
+    print(f"Interface: {findall(ipv4_re, str(run(['ipconfig'], stdout = PIPE)))[2]}\n")
     print("  Internet address      Physical address")
-    [print(f"  {ip}          {mac.lower()}") for ip, mac in zip(ipv4_addresses, mac_addresses)]
+    spaces = " "*10
+    [print(f"  {ip}{spaces}{mac.lower()}") for ip, mac in zip(ipv4_addresses, mac_addresses)]
         
 def displayHelp():
     with open("C:/Users/Jaka/Documents/Programming/Python/netconfig/help.txt", "r") as f:
