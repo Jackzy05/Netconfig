@@ -22,7 +22,7 @@ elif argv[1] not in ["block", "unblock", "list", "/?"]:
 ipv4_re = compile(r"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})")
 mac_re = compile(r'(?:[0-9a-fA-F]:?){12}')
 
-GATEWAY = f"http://{findall(ipv4_re, str(run(['ipconfig'], stdout = PIPE)))[2]}"
+GATEWAY = f"http://192.168.0.1"
 if len(argv) == 3:
     match argv[1]:
         case "block":
